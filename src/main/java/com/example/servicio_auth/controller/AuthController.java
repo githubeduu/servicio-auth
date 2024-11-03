@@ -41,22 +41,15 @@ public class AuthController {
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
 
-        // Llamada al servicio de usuario para autenticar
         UserResponse userResponse = userDetailsService.authenticateUser(username, password);
 
-        // Si la respuesta es nula, el usuario no fue encontrado
-        if (userResponse == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid login");
-        }
-
-        // Generar el token JWT
         String token = jwtAuthtenticationConfig.getJWTToken(username);
 
-        // Crear la respuesta
         LoginResponse loginResponse = new LoginResponse(userResponse, token);
-        
-        return ResponseEntity.ok(loginResponse); // Devolver la respuesta completa
+
+        return ResponseEntity.ok(loginResponse);
     }
+
 
 
     @GetMapping("/validate")
