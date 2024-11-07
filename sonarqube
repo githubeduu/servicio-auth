@@ -1,0 +1,5 @@
+mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=githubeduu_servicio-auth_2d11c418-ce2c-472c-aeff-3c8e9e1fffbc \
+  -Dsonar.projectName='servicio-auth' \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_4bc7856e1485dcc20e6cc9e3ade6753f960d4195
