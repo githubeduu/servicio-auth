@@ -18,7 +18,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final RestTemplate restTemplate = new RestTemplate();
 
     public UserResponse authenticateUser(String username, String password) {
-        String url = "http://localhost:8081/usuario/signin";
+        String url = "http://localhost:8082/usuario/signin";
         LoginRequest loginRequest = new LoginRequest(username, password);
 
         try {
